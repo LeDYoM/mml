@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{6A3C7FA9-DCD4-4A58-9A2E-873380989780}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>ml</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="Macros.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="Macros.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;GLEW_STATIC;_DEBUG;_WINDOWS;_USRDLL;ML_EXPORTS;_CRTDBG_MAP_ALLOC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)$(DEPENDENCIES_DIR)\$(GLFW_BASE_DIR)$(GLFW_VERSION_DIR)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>glfw3dll.lib;opengl32.lib;glu32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)$(DEPENDENCIES_DIR)\$(GLFW_BASE_DIR)$(GLFW_VERSION_DIR)\lib\$(PlatformTarget)\dlib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;GLEW_STATIC;NDEBUG;_WINDOWS;_USRDLL;ML_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)$(DEPENDENCIES_DIR)\$(GLFW_BASE_DIR)$(GLFW_VERSION_DIR)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>glfw3dll.lib;opengl32.lib;glu32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)$(DEPENDENCIES_DIR)\$(GLFW_BASE_DIR)$(GLFW_VERSION_DIR)\lib\$(PlatformTarget)\dlib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="glew\glew.h" />
+    <ClInclude Include="glew\glxew.h" />
+    <ClInclude Include="glew\wglew.h" />
+    <ClInclude Include="include\graph\BMText.h" />
+    <ClInclude Include="include\graph\bmfont.h" />
+    <ClInclude Include="include\graph\Image.h" />
+    <ClInclude Include="include\graph\graph.h" />
+    <ClInclude Include="include\mlcconfig.h" />
+    <ClInclude Include="coreLoaderPriv.h" />
+    <ClInclude Include="CorePriv.h" />
+    <ClInclude Include="include\Core.h" />
+    <ClInclude Include="include\CoreLoader.h" />
+    <ClInclude Include="include\graph\Box.h" />
+    <ClInclude Include="include\graph\ManagedWindow.h" />
+    <ClInclude Include="include\graph\RenderManager.h" />
+    <ClInclude Include="include\graph\Shape.h" />
+    <ClInclude Include="include\graph\TransformMatrix4.h" />
+    <ClInclude Include="include\IOTypes.h" />
+    <ClInclude Include="include\log.h" />
+    <ClInclude Include="include\Matrix.h" />
+    <ClInclude Include="include\ml.h" />
+    <ClInclude Include="include\types.h" />
+    <ClInclude Include="include\Window.h" />
+    <ClInclude Include="include\WindowCreationOptions.h" />
+    <ClInclude Include="include\graph\IRenderizable.h" />
+    <ClInclude Include="include\graph\ITransformable.h" />
+    <ClInclude Include="logPriv.h" />
+    <ClInclude Include="mlprivcconfig.h" />
+    <ClInclude Include="openglPriv.h" />
+    <ClInclude Include="graph\soil\image_DXT.h" />
+    <ClInclude Include="graph\soil\image_helper.h" />
+    <ClInclude Include="graph\soil\SOIL.h" />
+    <ClInclude Include="graph\soil\stbi_DDS_aug.h" />
+    <ClInclude Include="graph\soil\stbi_DDS_aug_c.h" />
+    <ClInclude Include="graph\soil\stb_image_aug.h" />
+    <ClInclude Include="include\graph\Texture.h" />
+    <ClInclude Include="include\graph\RendererOptions.h" />
+    <ClInclude Include="include\graph\TextureOptions.h" />
+    <ClInclude Include="include\graph\TriangleList.h" />
+    <ClInclude Include="include\graph\Shader.h" />
+    <ClInclude Include="include\graph\ResourceManager.h" />
+    <ClInclude Include="include\graph\Resource.h" />
+    <ClInclude Include="TWrapper.h" />
+    <ClInclude Include="TWrapperLoader.h" />
+    <ClInclude Include="TWWrapper.h" />
+    <ClInclude Include="include\graph\VertexArray.h" />
+    <ClInclude Include="include\graph\VAOWrapper.h" />
+    <ClInclude Include="WindowPrivate.h" />
+    <ClInclude Include="wr_glfw\twglfw.h" />
+    <ClInclude Include="wr_glfw\twwglfw.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="glew\glew.c" />
+    <ClCompile Include="graph\BMText.cpp" />
+    <ClCompile Include="dllmain.cpp">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="CoreLoader.cpp" />
+    <ClCompile Include="CorePriv.cpp" />
+    <ClCompile Include="graph\Box.cpp" />
+    <ClCompile Include="graph\ManagedWindow.cpp" />
+    <ClCompile Include="graph\RenderManager.cpp" />
+    <ClCompile Include="graph\Shape.cpp" />
+    <ClCompile Include="graph\Image.cpp" />
+    <ClCompile Include="graph\bmfont.cpp" />
+    <ClCompile Include="log.cpp" />
+    <ClCompile Include="openglPriv.cpp" />
+    <ClCompile Include="graph\soil\image_DXT.c" />
+    <ClCompile Include="graph\soil\image_helper.c" />
+    <ClCompile Include="graph\soil\SOIL.c" />
+    <ClCompile Include="graph\soil\stb_image_aug.c" />
+    <ClCompile Include="graph\Texture.cpp" />
+    <ClCompile Include="graph\RendererOptions.cpp" />
+    <ClCompile Include="graph\TextureOptions.cpp" />
+    <ClCompile Include="graph\TriangleList.cpp" />
+    <ClCompile Include="graph\Shader.cpp" />
+    <ClCompile Include="graph\ResourceManager.cpp" />
+    <ClCompile Include="graph\Resource.cpp" />
+    <ClCompile Include="TWrapperLoader.cpp" />
+    <ClCompile Include="graph\VertexArray.cpp" />
+    <ClCompile Include="graph\VAOWrapper.cpp" />
+    <ClCompile Include="Window.cpp" />
+    <ClCompile Include="wr_glfw\twglfw.cpp" />
+    <ClCompile Include="wr_glfw\twwglfw.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

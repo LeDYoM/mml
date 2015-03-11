@@ -1,0 +1,7 @@
+https://www.opengl.org/sdk/docs/tutorials/ClockworkCoders/attributes.php
+http://www.lighthouse3d.com/tutorials/glsl-core-tutorial/attribute-variables/
+http://irrlicht.sourceforge.net/forum/viewtopic.php?t=43829
+http://www.lighthouse3d.com/tutorials/glsl-core-tutorial/glsl-core-tutorial-texturing-with-images/
+
+http://zach.in.tu-clausthal.de/teaching/cg_literatur/glsl_tutorial/
+

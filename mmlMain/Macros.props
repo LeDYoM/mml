@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros">
+    <DEPENDENCIES_DIR>dependencies</DEPENDENCIES_DIR>
+    <GLFW_BASE_DIR>glfw-</GLFW_BASE_DIR>
+    <GLFW_VERSION_DIR>3.0.4</GLFW_VERSION_DIR>
+    <ML_INCLUDE_DIR>ml/include</ML_INCLUDE_DIR>
+    <ML_LIB_DIR />
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemDefinitionGroup />
+  <ItemGroup>
+    <BuildMacro Include="DEPENDENCIES_DIR">
+      <Value>$(DEPENDENCIES_DIR)</Value>
+    </BuildMacro>
+    <BuildMacro Include="GLFW_BASE_DIR">
+      <Value>$(GLFW_BASE_DIR)</Value>
+    </BuildMacro>
+    <BuildMacro Include="GLFW_VERSION_DIR">
+      <Value>$(GLFW_VERSION_DIR)</Value>
+    </BuildMacro>
+    <BuildMacro Include="ML_INCLUDE_DIR">
+      <Value>$(ML_INCLUDE_DIR)</Value>
+    </BuildMacro>
+    <BuildMacro Include="ML_LIB_DIR">
+      <Value>$(ML_LIB_DIR)</Value>
+    </BuildMacro>
+  </ItemGroup>
+</Project>
